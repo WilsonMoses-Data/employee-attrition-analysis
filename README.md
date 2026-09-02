@@ -1,23 +1,45 @@
+<p align="center">
+  <img src="images/wilson-moses-banner.png" width="100%" alt="Wilson Moses — Data Science and AI Engineering">
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/wilson-moses-9207b22bb">LinkedIn</a>
+  ·
+  <a href="https://github.com/WilsonMoses-Data">GitHub</a>
+  ·
+  <a href="https://www.tiktok.com/@moses.learnsdata">Moses Learns Data</a>
+</p>
+
 # Employee Attrition Analysis
 
-> Exploratory analysis of 1,470 employee records to identify workforce attrition patterns and establish evidence for future statistical or predictive work.
+> Exploratory analysis of 1,470 employee records to identify workforce attrition patterns and establish evidence for future statistical and predictive work.
 
-**Programme:** AnalystLab Africa Data Science Internship — Week 1  
-**Project phase:** Completed exploratory analysis  
-**Author:** [Wilson Moses](https://github.com/WilsonMoses-Data)
+![Employee Attrition Analysis project card](images/social-preview.png)
+
+## Project snapshot
+
+| Project detail | Information |
+|---|---|
+| Domain | People Analytics |
+| Context | AnalystLab Africa Data Science Internship — Week 1 |
+| Status | Completed exploratory analysis |
+| Dataset | 1,470 employee records and 35 variables |
+| Target | `Attrition` — Yes or No |
+| Core tools | Python, pandas, NumPy, Matplotlib, Seaborn and Jupyter Notebook |
+| Deliverables | Two notebooks, a presentation, reproducible visuals and project documentation |
 
 ## Project overview
 
-ABC Manufacturing Ltd wants to understand employee attrition before investing in predictive modelling. This project examines workforce composition and compares attrition across overtime status, departments, job roles, age, income, and experience.
+ABC Manufacturing Ltd wants to understand employee attrition before investing in predictive modelling. This project examines workforce composition and compares attrition across overtime status, departments, job roles, age, income and experience.
 
-The analysis is descriptive and exploratory. It identifies associations and priority questions; it does not claim that the observed factors cause employees to leave.
+The work is descriptive and exploratory. It identifies associations and priority questions; it does not claim that the observed factors cause employees to leave.
 
 ## Business questions
 
 1. What does the workforce look like?
-2. Which departments and roles have the highest attrition rates?
+2. Which departments and job roles have the highest attrition rates?
 3. How does overtime relate to attrition?
-4. How do age, monthly income, and working experience differ between employees who stayed and left?
+4. How do age, monthly income and total working experience differ between employees who stayed and left?
 5. Which variables warrant future statistical testing and predictive modelling?
 
 ## Dataset
@@ -26,20 +48,20 @@ The analysis is descriptive and exploratory. It identifies associations and prio
 - **Rows:** 1,470 employee records
 - **Variables:** 35
 - **Target:** `Attrition` (`Yes`/`No`)
-- **Missing values found:** 0
-- **Exact duplicates found:** 0
+- **Missing values:** 0
+- **Exact duplicate rows:** 0
 
-The fields cover demographics, compensation, work characteristics, satisfaction measures, job roles, and tenure.
+The fields cover demographics, compensation, work characteristics, satisfaction measures, job roles and tenure. See the [data documentation](data/README.md) for usage and licensing notes.
 
-## Workflow
+## Analytical workflow
 
-1. Load and inspect the dataset.
-2. Validate dimensions, data types, missingness, duplicates, and category values.
-3. Summarise workforce composition.
-4. Visualise distributions for age, income, and experience.
-5. Calculate overall and subgroup attrition rates.
-6. Compare employees who stayed and left.
-7. Translate the patterns into business insights and future analytical questions.
+1. Loaded and inspected the dataset.
+2. Validated dimensions, data types, missingness, duplicates and categorical values.
+3. Summarised workforce composition.
+4. Visualised distributions for age, income and working experience.
+5. Calculated overall and subgroup attrition rates.
+6. Compared employees who stayed with those who left.
+7. Translated the patterns into business insights and future analytical questions.
 
 ## Key findings
 
@@ -48,78 +70,135 @@ The fields cover demographics, compensation, work characteristics, satisfaction 
 | Overall attrition | 237 of 1,470 employees; **16.12%** |
 | Overtime | **30.53%** attrition with overtime vs. **10.44%** without overtime |
 | Department | Sales **20.63%**, Human Resources **19.05%**, R&D **13.84%** |
-| Highest-risk role | Sales Representative **39.76%** |
-| Age | Employees who left averaged approximately **33.6 years** vs. **37.6 years** for those who stayed |
-| Monthly income | Employees who left averaged approximately **4,787** vs. **6,833** for those who stayed |
-| Total working years | Employees who left averaged approximately **8.2 years** vs. **11.9 years** for those who stayed |
+| Highest-attrition role | Sales Representative **39.76%** |
+| Age | Employees who left averaged **33.61 years** vs. **37.56 years** for those who stayed |
+| Monthly income | Employees who left averaged **4,787.09** vs. **6,832.74** for those who stayed |
+| Total working years | Employees who left averaged **8.24 years** vs. **11.86 years** for those who stayed |
 
-Overtime is the clearest descriptive signal in this analysis, but it should be examined alongside job role, department, travel, satisfaction, and tenure before any intervention is designed.
+Overtime is the clearest descriptive signal in this analysis, but it should be examined alongside job role, department, travel, satisfaction and tenure before any intervention is designed.
 
-## Business interpretation
+## Visual results
+
+### Overall attrition
+
+![Overall employee attrition counts](images/overall-attrition.png)
+
+### Overtime and attrition
+
+![Attrition rate by overtime status](images/overtime-attrition-rate.png)
+
+### Attrition by job role
+
+![Attrition rate by job role](images/job-role-attrition-rate.png)
+
+## Business recommendations
 
 - Review overtime practices and workload concentration, especially in roles with high attrition.
-- Investigate Sales Representative working conditions, onboarding, management support, and career progression.
+- Investigate Sales Representative working conditions, onboarding, management support and career progression.
 - Segment future analysis by role and department to avoid broad company-wide conclusions.
-- Use interviews, exit feedback, and operational context to complement the dataset.
-- Validate observed patterns statistically before using them for policy or prediction.
+- Combine the dataset with interviews, exit feedback and operational context.
+- Validate the observed relationships statistically before using them for policy or prediction.
 
-## Repository contents
+## Repository structure
 
 ```text
-ABC_Manufacturing_Attrition_Analysis/
+employee-attrition-analysis/
 ├── README.md
 ├── LICENSE
-├── ABC Manufacturing - Attrition Findings & Insights.pptx
-└── ABC Data Inspection and Exploration/
-    ├── ABC_Employee_Attrition_DataSet.csv
-    ├── Data_loading_and_Inspection.ipynb
-    └── Data_Exploration.ipynb
+├── requirements.txt
+├── data/
+│   ├── README.md
+│   └── raw/
+│       └── abc_employee_attrition.csv
+├── images/
+│   ├── job-role-attrition-rate.png
+│   ├── overall-attrition.png
+│   ├── overtime-attrition-rate.png
+│   ├── social-preview.png
+│   └── wilson-moses-banner.png
+├── notebooks/
+│   ├── 01_data_loading_and_inspection.ipynb
+│   └── 02_exploratory_attrition_analysis.ipynb
+├── reports/
+│   └── employee_attrition_findings_and_insights.pptx
+└── scripts/
+    └── generate_readme_visuals.py
 ```
 
-### Key files
+## Run locally
 
-- [`Data_loading_and_Inspection.ipynb`](ABC%20Data%20Inspection%20and%20Exploration/Data_loading_and_Inspection.ipynb) — structural and quality assessment.
-- [`Data_Exploration.ipynb`](ABC%20Data%20Inspection%20and%20Exploration/Data_Exploration.ipynb) — visual and attrition-focused analysis.
-- [`ABC Manufacturing - Attrition Findings & Insights.pptx`](ABC%20Manufacturing%20-%20Attrition%20Findings%20%26%20Insights.pptx) — presentation of findings and recommendations.
+```bash
+git clone https://github.com/WilsonMoses-Data/employee-attrition-analysis.git
+cd employee-attrition-analysis
 
-## Tools used
+python -m venv .venv
+```
 
-- Python and Jupyter Notebook
-- pandas and NumPy
-- Matplotlib and Seaborn
+Activate the environment:
 
-## Reproducing the analysis
+```bash
+# Windows
+.venv\Scripts\activate
 
-1. Clone the repository.
-2. Create a Python environment.
-3. Install Jupyter, pandas, NumPy, Matplotlib, and Seaborn.
-4. Open the notebooks in `ABC Data Inspection and Exploration/`.
-5. Run `Data_loading_and_Inspection.ipynb` first.
-6. Run `Data_Exploration.ipynb` second.
+# macOS or Linux
+source .venv/bin/activate
+```
 
-The repository should add a pinned dependency file to improve reproducibility.
+Install the dependencies and start Jupyter:
 
-## Limitations
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+jupyter notebook
+```
+
+Run the notebooks in numerical order. The notebook paths are already configured for the repository structure.
+
+To regenerate the README visuals:
+
+```bash
+python scripts/generate_readme_visuals.py
+```
+
+## Assumptions, limitations and responsible use
 
 - The data is cross-sectional and does not establish causation.
-- The analysis does not yet control for interactions between overtime, role, income, tenure, and other factors.
+- The analysis does not yet control for interactions among overtime, role, income, tenure and other factors.
 - Several employee-experience variables are self-reported or ordinal.
 - Findings from the public IBM dataset may not generalise to another company without local validation.
-- Any future model should be assessed for fairness and should support—not replace—human HR judgement.
+- Any future model should be evaluated for fairness and should support—not replace—human HR judgement.
+- Original code and documentation are covered by the repository licence; the dataset remains subject to its original source terms.
+
+## Skills demonstrated
+
+- Business-question translation
+- Data loading and quality inspection
+- Exploratory data analysis
+- Categorical and numerical comparison
+- Data visualisation
+- Business interpretation
+- Responsible analytical communication
+- Reproducible project documentation
+
+## Learning reflection
+
+This first internship project strengthened my ability to move from a broad business concern—employee attrition—to specific analytical questions and evidence. The most important lesson was that a strong descriptive pattern is a starting point for investigation, not proof of causation.
 
 ## Next steps
 
-- Add statistical tests and effect-size estimates for priority relationships.
-- Develop multivariate analysis to separate overlapping factors.
-- Add a small selection of exported charts to the README.
-- Create a reproducible dependency file.
-- Rename and reorganise files into consistent `data/`, `notebooks/`, `reports/`, and `images/` folders.
+- Apply statistical tests and effect-size measures to priority relationships.
+- Build a multivariate analysis that separates overlapping factors.
+- Investigate class imbalance before predictive modelling.
+- Compare models using metrics appropriate for attrition risk.
+- Evaluate subgroup performance and fairness before operational use.
 
-## Licence and data source
+## Author
 
-Original code and documentation are released under the repository’s [MIT Licence](LICENSE). The dataset remains subject to the terms of its [original Kaggle source](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset).
+**Wilson Moses**  
+Developing Data Scientist × AI Engineer based in Botswana
 
-## Contact
-
-**Wilson Moses** — Data Scientist × AI Engineer in development  
 [LinkedIn](https://www.linkedin.com/in/wilson-moses-9207b22bb) · [GitHub](https://github.com/WilsonMoses-Data) · [Moses Learns Data](https://www.tiktok.com/@moses.learnsdata)
+
+---
+
+<p align="center"><strong>Learning. Building. Applying.</strong></p>
